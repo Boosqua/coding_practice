@@ -1,0 +1,21 @@
+body{
+   margin: 0;
+}
+.container {
+   display: grid;
+   grid-template-columns: 50px 100px auto 200px;
+   grid-template-rows: 50px 100px auto 500px;
+   height: 100vh;
+}
+.item-1 {
+   background-color: blue;
+}
+.item-2{
+   background: green;
+}
+.item-3{
+   background: yellow;
+}
+.item-4{
+   background: red;
+}
