@@ -55,12 +55,11 @@ class BST {
 			return [this].concat(nextNode)
 		}
 	}
-  remove( value ) {
+  remove( value, root = true ) {
     // Write your code here.
     // Do not edit the return statement of this method.
-		if( //return this if value not in tree or value is rootnode and no leafs
-			!this.contains(value) || 
-			(this.value === value && !this.left && !this.right ) ){
+		if( !this.contains(value) || 
+			(this.value === value && !this.left && !this.right && root ) ){
 			return this
 		} 
 		const nodes = this.find(value)
@@ -68,7 +67,7 @@ class BST {
 		const parent = nodes[ nodes.length - 2 ]
 		if( removed.right ){
 			const replacementVal = removed.min()
-			this.remove( replacementVal.value )
+			this.remove( replacementVal.value, false )
 			removed.value = replacementVal.value
 		} else {
 			const replacement = removed.left? removed.left : null
@@ -89,5 +88,13 @@ class BST {
 	}
 }
 
-// Do not edit the line below.
-exports.BST = BST;
+const bst = new BST(7)
+bst.insert(5)
+bst.insert(6)
+bst.insert(4)
+bst.insert(11)
+
+bst.insert(10)
+console.log(bst);
+bst.remove(10)
+console.log(bst)
