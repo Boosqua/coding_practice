@@ -89,12 +89,12 @@ class BST {
 }
 
 const bst = new BST(7)
-bst.insert(5)
-bst.insert(6)
-bst.insert(4)
-bst.insert(11)
+// bst.insert(5)
+// bst.insert(6)
+// bst.insert(4)
+// bst.insert(11)
 
-bst.insert(10)
-console.log(bst);
-bst.remove(10)
-console.log(bst)
+// bst.insert(10)
+// console.log(bst);
+// bst.remove(10)
+// console.log(bst)
